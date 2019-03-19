@@ -1,11 +1,11 @@
 package openchallenge;
 
 public class StudentScore {
-	String name;
-	int mat;
-	int eng;
-	int sci;
-	double avg;
+	private String name;
+	private int mat;
+	private int eng;
+	private int sci;
+	private double avg;
 	
 	public StudentScore(String name, int mat, int eng, int sci) {
 		this.name = name;
@@ -15,7 +15,7 @@ public class StudentScore {
 	}
 	
 	double average() {
-		avg = mat + eng + sci;
+		double avg =this.mat + this.eng + this.sci;
 		avg /= 3.0;
 		return avg;
 	}
@@ -23,6 +23,6 @@ public class StudentScore {
 	
 	@Override
 	public String toString() {
-		return "학생 점수 [이름 :" + name + ", 수학 점수 :" + mat + ", 영어 점수 :" + eng + ", 과학 점수 :" + sci + ", 평균 : " + avg + "]";
+		return "학생 점수 [이름 :" + this.name + ", 수학 점수 :" + this.mat + ", 영어 점수 :" + this.eng + ", 과학 점수 :" + this.sci + ", 평균 : " + this.avg + "]";
 	}
 }
