@@ -5,7 +5,7 @@ public class StudentScore {
 	private int mat;
 	private int eng;
 	private int sci;
-	private double avg;
+	double avg;
 	
 	public StudentScore(String name, int mat, int eng, int sci) {
 		this.name = name;
