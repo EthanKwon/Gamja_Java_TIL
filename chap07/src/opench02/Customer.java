@@ -1,9 +1,9 @@
 package opench02;
 
 public class Customer {
-	public String name;
-	public String phoneNum;
-	public String address;
+	private String name;
+	private String phoneNum;
+	private String address;
 	
 	public Customer(String name, String phoneNum, String address) {
 		this.name = name;
