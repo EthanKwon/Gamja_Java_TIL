@@ -1,12 +1,12 @@
 package opench01;
 
 public class Song {
-	public String title;
-	public String artist;
-	public String album;
-	public String composer;
-	public int year;
-	public int track;
+	private String title;
+	private String artist;
+	private String album;
+	private String composer;
+	private int year;
+	private int track;
 	
 	public Song( ) {};
 	public Song(String title, String artist, String album, String composer, int year, int track) {
