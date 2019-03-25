@@ -12,7 +12,7 @@ public class ThreeNumberTimes {
 					int temp = Integer.parseInt(str[i][k]);
 					int hour = temp/100;
 					int min = temp%100;
-					sum += hour*3600 + min*60;
+					sum += 60;
 				}			
 			}
 		}
