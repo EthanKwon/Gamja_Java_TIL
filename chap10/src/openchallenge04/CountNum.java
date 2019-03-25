@@ -3,7 +3,7 @@ package openchallenge04;
 public class CountNum {
 	public static void main(String[] args) {
 		int[] num = new int[1000];
-		int[] sum = new int[10];
+		int[] sum = {0,0,0,0,0,0,0,0,0,0};
 		
 		for(int i = 0; i<num.length;i++) {
 			num[i] = i+1;

@@ -2,7 +2,7 @@ package openchallenge03;
 
 import java.util.Scanner;
 
-public class listNum {
+public class ListNum {
 	public static void main(String[] args) {
 		String[] numList = new String[10];
 		int countList = 0;
