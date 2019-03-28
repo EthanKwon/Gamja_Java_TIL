@@ -6,15 +6,12 @@ public class PythagorasNumber {
 	}
 	
 	public static void PythagorasNumber() {
-		for(int i =2; i<999 ; i++) {
-			for(int k=2; k<999 ; k++) {
-				for(int m=3;m<999;m++) {
-					if(i+k+m == 1000 && i<k && k<m) {
+		for(int i =1; i<333 ; i++) {
+			for(int k=2; k<499 ; k++) {
+				int m = 1000 - i - k;
 						if((i*i)+(k*k) == (m*m)) {
 							System.out.println("찾았다! : " + i + " "+ k +" "+  m);
 						}
-					}
-				}
 			}
 		}
 	}
