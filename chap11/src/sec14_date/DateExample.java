@@ -12,7 +12,7 @@ public class DateExample {
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy년 MM월 hh시 mm분 ss초");
 		
 		String strNow2 = sdf.format(now);
-		System.out.println(strNow2);
+		System.out.println(now);
 	}
 	
 	
