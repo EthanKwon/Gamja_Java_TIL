@@ -63,7 +63,7 @@ public class SignUpApplication {
 	}
 	
 	static void lookUpMember(MemberDAO mDao) {
-		List<MemberDTO> memberList = mDao.selectAll();
+		List<MemberDTO> memberList = mDao.selectAlldesc();
 		System.out.println("[가입한 사람 명단]");
 		for(MemberDTO member : memberList) {
 			System.out.println(member.toString());

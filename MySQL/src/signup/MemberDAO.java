@@ -77,6 +77,12 @@ public class MemberDAO {
 		return memberList;
 	}
 	
+	public List<MemberDTO> selectAlldesc(){
+		String sql = "select * from info_member order by id desc;";
+		List<MemberDTO> memberList = selectCondition(sql);
+		return memberList;
+	}
+	
 	public List<MemberDTO> selectIdLookUp(String name){
 		String sql = "select * from info_member where name like '"+ name +"' ;";
 		List<MemberDTO> memberList = selectCondition(sql);
