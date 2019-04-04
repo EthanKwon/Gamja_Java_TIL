@@ -1,7 +1,8 @@
 package signin;
 
 import java.util.Scanner;
-import signup.*;
+
+import signup.MemberDAO;
 
 public class SignInApplication {
 	public static void main(String[] args) {
