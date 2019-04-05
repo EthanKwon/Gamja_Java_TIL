@@ -50,7 +50,7 @@ public class BbsDAO {
 	
 	//변경 
 	public void updateBbs(BbsDTO write) {
-		String query = "update bbs set title=?, content=? where id =?;";
+		String query = "update bbs set title=?, content=?, date=now() where id =?;";
 		PreparedStatement pStmt = null;
 		try {
 			pStmt = conn.prepareStatement(query);
