@@ -1,6 +1,6 @@
 package membermodeling;
 
-public class Member implements Comparable<Member> {
+public class Member implements Comparable<Object> {
 	private String name;
 	private String id;
 	private String password;
@@ -14,16 +14,20 @@ public class Member implements Comparable<Member> {
 	}
 	
 	public Member() {};
-
-	public int comparableTo(Member member) {
-
-		if(age>member.getAge()) {
-			return 1;
-		} else if (age < member.getAge()) {
-			return -1;
-		} else {
-			return 0;
+	
+	@Override
+	public int comparableTo(Object o) {
+		if(o instanceof Member) {
+			Member member = (Member)o;
+			if(age>member.getAge()) {
+				return 1;
+			} else if (age < member.getAge()) {
+				return -1;
+			} else {
+				return 0;
+			}
 		}
+		return 100;
 	}
 	
 	public String getName() {
