@@ -41,6 +41,7 @@ public class HexaDump {
 			
 			if (num%8 == 0 && num%16 != 0) { // 8번째와 9번째 사이에 구분을 위한 빈칸을 넣는다. 
 				System.out.print(" ");
+				str.append(" ");
 			}
 			
 			num ++;
