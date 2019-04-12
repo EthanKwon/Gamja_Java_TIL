@@ -30,9 +30,8 @@ public class HexaDump {
 		
 		while( (data = bis.read())!=-1) {
 			System.out.printf("%02X ",data); // 1바이트의 값을 16진수로 출력
-			if(data > 64 && data < 90 ) str.append((char)data); //A-Z이면 문자열 그대로 저장
-			else if(data > 96 && data < 123 ) str.append((char)data); // a-z이면 문자열 그대로 저장
-			else str.append("."); //나머지 문자열은 모두 '.'처리
+			if(data > 32 && data < 126 ) str.append((char)data); //문자열 그대로 저장
+			else str.append("."); //나머지 문자는 모두 '.'처리
 			
 			if(num%16 == 0) { //16개의 1바이트 값을 출력하고 나면 맨뒤에 문자열을 출력하고 다음줄에 라인넘버를 만든다.
 				System.out.print("\t" +  str.toString());
