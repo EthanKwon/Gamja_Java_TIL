@@ -1,12 +1,14 @@
 package signup;
 
-import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+
+import com.mysql.jdbc.Connection;
+
 
 public class MemberDAO {
 	private Connection conn;
@@ -17,7 +19,7 @@ public class MemberDAO {
 	public MemberDAO() {
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
-			conn = DriverManager.getConnection(URL, USERNAME, PASSWORD);
+			conn = (Connection) DriverManager.getConnection(URL, USERNAME, PASSWORD);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -33,6 +35,37 @@ public class MemberDAO {
 			pStmt.setString(2, member.getName());
 			pStmt.setString(3, member.getBirthday());
 			pStmt.setString(4, member.getAddress());
+			
+			pStmt.executeUpdate();
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				if(pStmt != null && !pStmt.isClosed())
+					pStmt.close();
+			} catch (SQLException se) {
+				se.printStackTrace();
+			}
+		}
+	}
+	
+	public void initPassword() {
+		List<MemberDTO> mList = selectAll();
+		for(MemberDTO member : mList) {
+			int id = member.getId();
+			String plainPassword = member.getPassword();
+			String hashedPassword = BCrypt.hashpw(plainPassword,BCrypt.gensalt());
+			updatePassword(id,hashedPassword);
+		}
+	}
+	
+	public void updatePassword(int id, String hashed) {
+		String query = "update info_member set hashed=? where id=?;";
+		PreparedStatement pStmt = null;
+		try {
+			pStmt = conn.prepareStatement(query);
+			pStmt.setString(1, hashed);
+			pStmt.setInt(2, id);
 			
 			pStmt.executeUpdate();
 		} catch (Exception e) {
