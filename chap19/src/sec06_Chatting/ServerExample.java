@@ -176,7 +176,7 @@ public class ServerExample extends Application{
 		btnStartStop.setOnAction(e->{
 			if(btnStartStop.getText().equals("start")) {
 				startServer();
-			} else if(btnStartStop.getText().equals("Stop")) {
+			} else if(btnStartStop.getText().equals("stop")) {
 				stopServer();
 			}
 		});
